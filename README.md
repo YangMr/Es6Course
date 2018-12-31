@@ -1,2 +1,5 @@
 # Es6Couse
-ES6 learning
+
+---
+
+#ES6第一章
