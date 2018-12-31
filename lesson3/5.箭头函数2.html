@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        let a = (a,b) =>{
+            console.log(a,b)
+            alert(a + b)
+        }
+        $(() => {
+            $("div").html("123").click((event) => {
+                a(event.clientX,20)
+            })
+        })
+
+        var arr = [1,23,45,21,21,3123,321];
+
+        arr.sort((n1,n2) => {
+            return n2-n1;
+        })
+        console.log(arr)
+    </script>
+
+<div></div>
+</body>
+</html>

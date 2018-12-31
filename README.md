@@ -10,11 +10,11 @@
 
 		要讲清楚这个问题，需要回顾历史。1996 年 11 月，JavaScript 的创造者 Netscape 公司，
 	决定将 JavaScript 提交给标准化组织 ECMA，希望这种语言能够成为国际标准。次年，ECMA 发
-	布 262 号标准文件（ECMA-262）的第一版，规定了浏览器脚本语言的标准，并将这种语言称为 
+	布 262 号标准文件（ECMA-262）的第一版，规定了浏览器脚本语言的标准，并将这种语言称为
 	ECMAScript，这个版本就是 1.0 版。
 
 		该标准从一开始就是针对 JavaScript 语言制定的，但是之所以不叫 JavaScript，有两个原
-	因。一是商标，Java 是 Sun 公司的商标，根据授权协议，只有 Netscape 公司可以合法地使用 
+	因。一是商标，Java 是 Sun 公司的商标，根据授权协议，只有 Netscape 公司可以合法地使用
 	JavaScript 这个名字，且 JavaScript 本身也已经被 Netscape 公司注册为商标。二是想体现
 	这门语言的制定者是 ECMA，不是 Netscape，这样有利于保证这门语言的开放性和中立性。
 
@@ -98,7 +98,7 @@ Your runtime supports 57% of ECMAScript 6
 ### 将ES6转化为ES5
 
 1. 安装Node.js环境
-	
+
 	1.1 官网: https://nodejs.org/zh-cn/
 
 	1.2 进行下载
@@ -108,7 +108,7 @@ Your runtime supports 57% of ECMAScript 6
 	1.4 安装CNPM
 
 		npm install -g cnpm --registry=https://registry.npm.taobao.org
-	
+
 	1.5 安装babel-cli
 
 		1.5.1 npm init 在当前目录初始化package.json,主要作用用来管理当前项目的依赖项
@@ -116,7 +116,7 @@ Your runtime supports 57% of ECMAScript 6
 		1.5.2 cnpm install --save-dev babel-cli
 
 		1.5.3 简单的在你的 package.json 中添加一个 "scripts" 属性并将 babel 命令放在它的 build 属性中。
-		
+
 		"build": "babel src -d lib"
 
 		1.5.4 在当前目录创建一个.babelrc文件
@@ -131,13 +131,18 @@ Your runtime supports 57% of ECMAScript 6
 		1.5.7 npm run build
 
 
-			
+
 
 2. NPM包管理器
 
 		https://docs.npmjs.com/about-npm/
 
+# 第二章 let和const命令
 
+## 2.1 let 命令
 
+## 2.2 块级作用域
 
+## 2.3 const 命令
 
+## 2.4 顶层对象的属性

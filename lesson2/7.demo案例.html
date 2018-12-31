@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        div{
+            width:200px;
+            height:200px;
+            background:red;
+            float:left;
+            margin:50px;
+            font-size:40px;
+            color:#fff;
+            text-align:center;
+            line-height:200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>第一个</div>
+    <div>第二个</div>
+    <div>第三个</div>
+</body>
+</html>
+<script>
+
+    let aDiv = document.getElementsByTagName("div");
+    for(let i=0;i<aDiv.length;i++){
+        aDiv[i].onclick = function(){
+            for(let i=0;i<aDiv.length;i++){
+                aDiv[i].style.background = "red"
+            }
+            aDiv[i].style.background = "yellow";
+        }
+    };
+
+    // function fn1(){
+    //     alert("1")
+    // }
+    // function fn2(){
+    //     alert("2")
+    // }
+    // var arr = [fn1,fn2]
+    //
+    // arr[0]()
+    // arr[1]()
+
+    // var a = [];
+    // for (let i = 0; i < 10; i++) {
+    //   a[i] = function () {
+    //       a[]
+    //   };
+    // }
+
+    // console.log(a[0]())
+    // console.log(a[1]())
+    // console.log(a[2]())
+    // console.log(a[3]())
+    // console.log(a[4]())
+    //
+    // a[6](); // 10
+
+
+
+
+</script>
