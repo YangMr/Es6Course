@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    {
+
+        let [a,b,c = "hello"] = [1,2,3];
+        console.log(a,b,c)
+    }
+
+    {
+        function fn() {
+            return [10,20.5];
+        };
+
+        let [number,price] = fn();
+
+        console.log(number,price);
+
+        // let number,price;
+        // number = fn()[0];
+        // price = fn()[1];
+        //
+        // console.log(number,price)
+
+
+    }
+
+    {
+
+        // let [x,y] = [1,2];
+
+        let [x, y = "hello"] = ["a",undefined];
+
+        console.log(y)
+
+    }
+
+    {
+
+        function demo() {
+            return "success";
+        }
+
+        let [x = demo()] = ["1"];
+
+        console.log(x)
+
+    }
+</script>

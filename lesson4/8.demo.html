@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        div{
+            width:200px;
+            height:200px;
+            /* background: red; */
+            margin:100px auto;
+            border:2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <p>商品名称: <span class="name"></span></p>
+    <p>商品价格: <span class="price"></span></p>
+
+
+    <div></div>
+
+    <div></div>
+
+    <div></div>
+
+    <div></div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    let div1 = document.getElementsByTagName("div")[0];
+
+    let [Y,G,P,Pk] = ["yellow","green","purple","pink"];
+
+    // for(let i=0;i<div1.length;i++){
+    //     div1[i].onclick = function () {
+    //         this.style.background = Y
+    //     }
+    // }
+
+    function changeStyle([obj]) {
+        console.log(obj)
+        obj.style[attr] = value;
+    }
+        // {obj,attr,value} = {obj : this, attr : background, value : G}
+    div1.onclick = function () {
+        changeStyle()
+    }
+    //
+    // div1[1].onclick = function () {
+    //     changeStyle({obj : this, attr : "width", value : "500px"})
+    // }
+    //
+    // div1[2].onclick = function () {
+    //     this.style.background = P;
+    // }
+    //
+    // div1[3].onclick = function () {
+    //     this.style.background = Pk;
+    // }
+
+
+    // {
+    //         // let x = 1;
+    //         // let y = 2;
+    //         //
+    //         // [x ,y]= [y,x]
+    //         //
+    //         // console.log(x,y)
+    //
+    //
+    //     function f({x, y, z}) {
+    //         ...
+    //     }
+    //     f({z: 3, y: 2, x: 1});
+    // }
+
+</script>
