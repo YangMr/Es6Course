@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    function Box(){
+        // this.name = "rose";
+        // this.age = 30;
+    }
+
+    Box.prototype.name = "jack";
+    Box.prototype.age = 20;
+    Box.prototype.run = function () {
+        alert("123")
+    }
+
+    let box1 = new Box();
+    let box2 = new Box();
+    Box.prototype.name = "hello";
+    console.log(box1.name);
+    console.log(box2.name);
+
+
+</script>
+</body>
+</html>
