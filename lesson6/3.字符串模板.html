@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body,div,h3,p{margin:0; padding:0;}
+        .article{
+            width:1000px;
+            margin:50px auto;
+        }
+        .article h3{
+            text-align:center;
+            padding-bottom:20px;
+            border-bottom:5px solid #ccc;
+            font-size:35px;
+        }
+        .article .article_container{
+            padding:20px 15px;
+
+        }
+        #btn{
+            width:150px;
+            height:35px;
+            display: block;
+            border:1px solid #ccc;
+            margin:20px auto;
+            cursor : pointer;
+        }
+        .send{
+            width:350px;
+            height:250px;
+            border:1px solid #eee;
+            position:absolute;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+            margin:auto;
+            background: #ccc;
+            display: none;
+        }
+        .send .close{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <input id="btn" type="button" value="发表文章">
+
+    <div class="article">
+
+
+    </div>
+
+    <div class="send">
+        <h3>发表文章 <span class="close">关闭</span></h3>
+        <p>
+            <label for="">标题:</label>
+            <input type="text" class="p_title" placeholder="请输入文章的标题">
+        </p>
+        <p>
+            <label for="">内容:</label>
+            <textarea name="name" class="t_text"></textarea>
+        </p>
+        <p>
+            <input type="button" value="发布" id="sub">
+        </p>
+    </div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    $(function () {
+        //点击显示
+        $("#btn").click(function () {
+            $(".send").show();
+        });
+
+        //点击 消失
+        $(".close").click(function () {
+            $(".send").hide();
+        });
+
+        //发布
+        $("#sub").click(function () {
+            let Ptitle = $(".p_title").val();
+            let Ptext = $(".t_text").val();
+
+            $(".article").html(
+                `<h3>${Ptitle}</h3> <p class="article_container">${Ptext}</p>`
+            );
+            $(".send").hide();
+        });
+    });
+
+
+
+
+
+</script>

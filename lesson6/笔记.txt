@@ -1,0 +1,24 @@
+对象的扩展:
+    属性的简介表示法
+        let a = 1;
+        let b = 1;
+
+        let obj = {
+            a,
+            b,
+            fn(){
+
+            }
+        }
+
+    字符串模板
+        `${}`
+
+    属性名的表达式:
+        let a = "hello"
+        let b = user;
+        {
+            ["name"] : "jack",
+            [a] : "world",
+            [b + "age"] :20
+        }
