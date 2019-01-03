@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>231</li>
+        <li>232</li>
+        <li>233</li>
+        <li>234</li>
+        <li>235</li>
+        <li>236</li>
+        <li>237</li>
+        <li>238</li>
+        <li>239</li>
+        <li>2310</li>
+    </ul>
+</body>
+</html>
+<script>
+
+    let arr = [12,45,235,8000];
+
+    let result = arr.reduce(function (emp,item,index) {
+        //12 45 1
+        // undefined 235 2
+        // undefined 8000 3
+        // 57 + 235 = 292
+        // 292 + 8000
+        console.log(emp)
+        return emp + item;
+    })
+    console.log(result)
+
+</script>

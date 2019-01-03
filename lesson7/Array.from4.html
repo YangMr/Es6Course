@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>99</p>
+    <p>101</p>
+    <p>102</p>
+    <p>103</p>
+    <p>104</p>
+    <p>105</p>
+    <p>106</p>
+    <p>107</p>
+    <p>108</p>
+    <p>109</p>
+    <p>1010</p>
+</body>
+</html>
+<script>
+
+    let aLi = document.querySelectorAll("p");
+    let arr = Array.from(aLi,function (item) {
+        return item.textContent;
+    });
+    let result = arr.reduce(function (emy,item,index) {
+        return Number.parseFloat(emy) + Number.parseFloat(item)
+    });
+
+    console.log(result)
+
+
+</script>

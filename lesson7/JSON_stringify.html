@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    let obj = {user : "jack",pass : 123456};
+    obj = JSON.stringify(obj);
+    alert(typeof obj)
+    let url = "https://www.es6.com/?" + encodeURIComponent(obj);
+    console.log(url)
+
+</script>

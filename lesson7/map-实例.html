@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            border:2px solid #ccc;
+        }
+        table{
+            width:800px;
+            margin:50px auto;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>成绩</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小王</td>
+            <td>10</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小王</td>
+            <td>10</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小王</td>
+            <td>10</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小王</td>
+            <td>10</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小王</td>
+            <td>10</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小王</td>
+            <td>10</td>
+            <td>80</td>
+        </tr>
+    </table>
+    <div id='box'></div>
+</body>
+</html>
+<script>
+
+
+    let qust = prompt();
+
+    let arr = qust.split(",");
+
+    let result = arr.map(function (item) {
+        return item = item>= 60 ? box.style.background = "red" : box.style.background = "yellow";
+    });
+
+    console.log(arr,result);
+
+</script>
