@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    let result1 = new Promise(function(resolve,reject) {
+        $.ajax({
+            url : "https://resources.ninghao.net/wxapp-case/db.json",
+            success : function (response) {
+                resolve(response);
+            },
+            error : function (err) {
+                reject(err);
+            }
+        })
+    });
+
+    let result2 = new Promise(function(resolve,reject) {
+        $.ajax({
+            url : "https://resources.ninghao.net/wxapp-case/db.json",
+            success : function (response) {
+                resolve(response);
+            },
+            error : function (err) {
+                reject(err);
+            }
+        })
+    });
+
+    result1.then(function (response) {
+        console.log(response)
+    },function (err) {
+        console.log(err)
+    });
+
+    result2.then(function (response) {
+        console.log(response)
+    },function (err) {
+        console.log(err);
+    })
+
+
+
+</script>

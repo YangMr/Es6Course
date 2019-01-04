@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="title"></p>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    function pro(url) {
+        return  new Promise(function(resolve,reject) {
+            $.ajax({
+                url : url,
+                success : function (response) {
+                    resolve(response);
+
+                },
+                error : function (err) {
+                    reject(err);
+                }
+            })
+        });
+
+    }
+
+
+    Promise.all([
+        pro("https://resources.ninghao.net/wxapp-case/db.json"),
+        pro("data/server.json")
+    ]).then(function (arr) {
+        console.log(arr)
+        let [data1,data2] = arr;
+        console.log(data2)
+
+        title.innerHTML = data2.name
+
+    },function (err) {
+        console.log(err);
+    })
+
+</script>

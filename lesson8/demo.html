@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body,ul,li{margin:0; padding:0;}
+        ul{list-style:none;width:350px; margin:100px auto;}
+        ul li{
+            padding:15px 20px;
+            border-bottom:1px dashed #ccc;
+        }
+        ul li i{
+            display:block;
+            text-align:right;
+            padding:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="笑话大全">
+    <ul>
+
+    </ul>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    $("#btn").click(function () {
+        Promise.all([
+            $.ajax({
+                url : "https://api.apishop.net/common/joke/getJokesByRandom?apiKey=PxPlhAH1fedfa9cb4057fbfb2bc891f76796c58f6ccb4e1",
+                data : {
+                    pageSize : "20"
+                }
+            }),
+            $.ajax({
+                url : "https://api.apishop.net/common/aphorism/queryAphorismTitleList?apiKey=PxPlhAH1fedfa9cb4057fbfb2bc891f76796c58f6ccb4e1",
+                data : {
+                    type : "1"
+                }
+            })
+        ]).then(function (arr) {
+            console.log(arr)
+            let [xyData] = arr;
+            let data = JSON.parse(xyData).result;
+            //console.log(JSON.parse(xyData).result)
+            for (let [index,value] of data.entries()){
+                let $li = $(`
+                    <li>
+                        ${value.content}
+                        <i>${value.updateTime}</i>
+                    </li>
+                `)
+                $("ul").append($li)
+                //console.log(value.content,value.updateTime)
+            };
+
+        },function (err) {
+            console.log(err)
+        })
+    });
+
+
+</script>

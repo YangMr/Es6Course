@@ -2,3 +2,80 @@
     includes()：返回布尔值，表示是否找到了参数字符串。
     startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
     endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。
+    Promise——承诺
+
+
+    异步：操作之间没啥关系，同时进行多个操作
+    同步：同时只能做一件事
+
+    异步：代码更复杂
+    同步：代码简单
+
+    异步：
+    ajax('/banners', function (banner_data){
+      ajax('/hotItems', function (hotitem_data){
+        ajax('/slides', function (slide_data){
+          ajax('/slides', function (slide_data){
+
+          }, function (){
+            alert('读取失败');
+          });
+        }, function (){
+          alert('读取失败');
+        });
+      }, function (){
+        alert('读取失败');
+      });
+    }, function (){
+      alert('读取失败');
+    });
+
+    有了Promise之后的异步：
+    Promise.all([$.ajax(), $.ajax()]).then(results=>{
+      //对了
+    }, err=>{
+      //错了
+    });
+
+    同步：
+    let banner_data=ajax_async('/banners');
+    let hotitem_data=ajax_async('/hotItems');
+    let slide_data=ajax_async('/slides');
+    let banner_data=ajax_async('/banners');
+
+    Promise——消除异步操作
+      *用同步一样的方式，来书写异步代码
+
+    Promise到底怎么用
+
+    ------------------------------------------------------------------------------
+
+    Promise.all
+    Promise.race    竞速
+
+    Promise.race([
+      $.ajax({url: 'http://a2.taobao.com/data/users'}),
+      $.ajax({url: 'http://a15.taobao.com/data/users'}),
+      $.ajax({url: 'http://a3.taobao.com/data/users'}),
+      $.ajax({url: 'http://a7.taobao.com/data/users'})
+    ]);
+
+    ------------------------------------------------------------------------------
+
+let p1 =  new Promise(function(resolve,reject){
+        $.ajax({
+            url : "data/server.json",
+            success : function(){
+                resolve()
+            },
+            error : function(){
+                reject()
+            }
+        })
+    });
+
+    p1.then(function(){
+
+    },function(){
+
+    })

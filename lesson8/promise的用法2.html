@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    let result = new Promise(function(resolve,reject) {
+        $.ajax({
+            url : "https://resources.ninghao.net/wxapp-case/db1.json",
+            success : function (response) {
+                resolve(response);
+            },
+            error : function (err) {
+                reject(err);
+            }
+        })
+    });
+
+    result.then(function (response) {
+        console.log("成功了")
+    },function (err) {
+        console.log("失败了")
+    })
+
+
+
+</script>
