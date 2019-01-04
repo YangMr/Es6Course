@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            width:800px;
+            margin:50px auto;
+            border-spacing:0;
+            border-collapse:collapse;
+            /* height:350px; */
+            text-align:center;
+        }
+
+        input{
+            float:left;
+            height:35px;
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="con" value="">
+    <input type="button" id="search" value="查询">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>爱好</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>王富贵</td>
+                <td>20</td>
+                <td>抽烟</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>于谦</td>
+                <td>20</td>
+                <td>喝酒,烫头</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>老王</td>
+                <td>25</td>
+                <td>唱歌</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>老宋</td>
+                <td>28</td>
+                <td>约会</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>王富贵</td>
+                <td>20</td>
+                <td>抽烟</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>于谦</td>
+                <td>20</td>
+                <td>喝酒,烫头</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>老王</td>
+                <td>25</td>
+                <td>唱歌</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>老宋</td>
+                <td>28</td>
+                <td>约会</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
+<script>
+    search.onclick = function () {
+        str = con.value;
+        let aTr = document.querySelector("tbody").querySelectorAll("tr");
+
+        let result = Array.from(aTr,function (item) {
+            return item.children[1];
+        });
+
+        result.filter(function (item) {
+            if(item.textContent.startsWith(str)){
+                item.parentNode.style.display = "block"
+            }else{
+                item.parentNode.style.display = "none"
+            }
+        });
+    }
+
+    // console.log(result)
+    // result.forEach(function (value,index) {
+    //     let count = value.map(function (item) {
+    //         console.log(item)
+    //     })
+    // })
+
+
+</script>
