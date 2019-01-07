@@ -1,0 +1,77 @@
+module:
+    全局变量:
+        任何地方都可以访问
+    私有变量:
+        在函数体内或者块作用域内
+    import export
+    浏览器不支持
+webpack:
+    集打包 编译 测试  还有其他功能的工具
+
+    1. cnpm install webpack -g
+    2. 创建webpack的配置文件
+        1. webpack.config.js
+
+
+假设:
+    common.js
+        show()
+        hide()
+        tab()
+        slider()
+        vad()
+    ajax.js
+        $.ajax({})
+        $.get({})
+        $.post({})
+
+    login.js
+        import common from "./common";
+        show(),hide()
+    reg.js:
+        import common form "./common";
+        import ajax form "./ajax"
+        vad()
+
+    index.js
+        import login from "./login"
+        import reg from "./reg"
+
+---------------------------------------------
+
+export :
+    export let a = 10;
+    import {a} from "模块路径及名称"
+
+    export {a,b,c,d}
+    import {a,b,c,d} from "模块路径及名称"
+    import { a as A , b as B , c AS C }
+
+    export {a as a1, b as b2, c as c3};
+    import * as tep from "模块路径及名称"
+
+    export default let a = 10;
+    import obj from "模块路径及名称"
+
+    export default {a,b,c}
+
+    export default {a as box1, b as box2, c as box3}
+    import obj from "模块路径及名称"
+
+    ------------------------------------------
+
+    index.js 入口模块
+        基础模块:
+            - 表单验证模块
+            - 解析数据模块
+            - axios模块
+        功能模块
+
+            - 搜索模块 - axios模块
+            - 轮播模块
+            - 用户信息模块
+            - 排行模块
+            - 新闻公告
+了解:
+        AMD CMD 规范
+        common.js

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    // let a = Symbol(10);
+    // let b = Symbol(10);
+    // console.log(a ===b);
+
+    // let obj = {
+    //     Symbol(name) : "jack",
+    //
+    //     Symbol(name) : "rose"
+    // };
+    // console.log(obj.name)
+
+    let obj = {
+        a : 30
+    };
+    let a = Symbol("a");
+    obj[a] = 20;
+    console.log(obj[a])
+
+</script>
