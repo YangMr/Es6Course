@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+function Pet(words,hellos){
+    this.words = words;
+    this.speak = function () {
+        console.log( this.words)
+    }
+}
+
+var dog = new Dog('Wang',"123");
+dog.speak();
+
+function Dog(words,hellos){
+    //Pet.call(this, words); //结果： Wang
+   Pet.apply(this,arguments); //结果： Wang
+}
+
+</script>
+
+
+</body>
+</html>

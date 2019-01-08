@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function User(name,pass){
+        this.name = name;
+        this.pass = pass;
+    }
+    User.prototype.showName = function(){
+        console.log(this.name);
+    }
+    User.prototype.showPass = function(){
+        console.log(this.pass);
+    }
+
+    function VipUser(name,pass,level){
+        User.call(this,name,pass);
+        this.level = level;
+    }
+
+    VipUser.prototype = new User();
+    VipUser.prototype.constructor = VipUser;
+
+    VipUser.prototype.showLevel = function(){
+        console.log(this.level);
+    }
+
+    let vipuser = new VipUser("jack","123456",2)
+
+    vipuser.showName();
+    vipuser.showPass();
+    vipuser.showLevel();
+
+
+
+
+</script>

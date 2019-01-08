@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="get">
+    <input type="button"  id="btn2" value="set">
+</body>
+</html>
+<script>
+
+    class Parent{
+        constructor(name,pass){
+            this.name = name;
+        }
+
+        get showName(){
+            return `我的名字是${this.name}`
+        }
+
+        set showName(value){
+            this.name = value;
+        }
+    }
+
+    let P = new Parent("hack");
+
+
+    btn1.onclick = function(){
+        console.log(P.showName)
+    }
+    btn2.onclick = function(){
+        P.showName = "123";
+        
+    }
+
+</script>

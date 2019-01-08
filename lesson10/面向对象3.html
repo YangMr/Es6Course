@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    class User{
+        constructor(name,pass){
+            this.name = name;
+            this.pass = pass;
+        }
+        showName(){
+            console.log(this.name);
+        }
+        showPass(){
+            console.log(this.pass);
+        }
+    }
+
+    let user = new User("rose","123456");
+    user.showName();
+    user.showPass();
+
+    // function User(name,pass){
+    //     this.name = name;
+    //     this.pass = pass;
+    // }
+    //
+    // User.prototype.showName = function(){
+    //     console.log(this.name)
+    // };
+    // User.prototype.showPass = function(){
+    //     console.log(this.pass);
+    // }
+    //
+    // let user = new User("jack","123456");
+    //
+    // user.showName();
+    // user.showPass();
+
+
+
+</script>

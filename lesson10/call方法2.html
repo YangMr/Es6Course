@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    var Pet = {
+        words : 'hello',
+        speak : function (say,sqw,sss) {
+            console.log(say + ''+ this.words)
+        }
+    }
+    // Pet.speak("world")
+    // Pet.speak('Speak'); // 结果：Speak...
+    //
+    var Dog = {
+        words:'Wang'
+    }
+    Pet.speak.call(Dog,"123","456")
+    Pet.speak.call(Dog,"123")
+</script>
+
+
+</body>
+</html>

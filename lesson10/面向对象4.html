@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            width:150px;
+            height:32px;
+            border:1px solid #ccc;
+            display:block;
+            margin:50px auto;
+        }
+        #box{
+            width:200px;
+            height:200px;
+            border:1px solid #ccc;
+            margin:100px auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="change" id="btn">
+    <div id="box"></div>
+</body>
+</html>
+<script>
+    //
+    // function setStyle(element,attr,value){
+    //     element.style[attr] = value;
+    // }
+
+    class Style{
+        //设置样式方法
+        setStyle(element,attr,value){
+            element.style[attr]= value;
+        }
+        //获取样式方法
+        getStyle(){
+            console.log("设置样式")
+        }
+    }
+
+    let style = new Style();
+
+    btn.onclick = function(){
+        style.setStyle(box,"width","400px");
+
+    }
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    class Style{
+        constructor(name){
+            this.name = name;
+        }
+        setStyle(element,attr,value){
+            element.style[attr] = value;
+        }
+
+        get prop(){
+            return this.name;
+        }
+
+        set prop(a){
+            this.name = a
+        }
+    }
+    let style = new Style("jack");
+    style.prop = 123;
+    console.log(style.prop)
+
+
+</script>

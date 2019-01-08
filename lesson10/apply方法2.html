@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+     window.number = 'one';
+     document.number = 'two';
+
+     var s1 = {number: 'three' };
+     function changeColor(){
+         console.log(this.number);
+     }
+     changeColor.apply(this)
+     //
+     // changeColor.apply();         //one (默认传参)
+     // changeColor.apply(window);   //one
+     // changeColor.apply(document); //two
+     // changeColor.apply(this);     //one
+     // changeColor.apply(s1);       //three
+
+</script>
+
+
+</body>
+</html>

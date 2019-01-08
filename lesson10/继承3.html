@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+    class User{
+        constructor(name,pass){
+            this.name = name;
+            this.pass = pass;
+        }
+        showName(){
+            console.log(this.name);
+        }
+        showPass(){
+            console.log(this.pass);
+        }
+    }
+
+    class VipUser extends User{
+        constructor(name,pass,level){
+            super(name,pass)
+            this.level = level;
+        }
+        showLevel(){
+            console.log(this.level)
+        }
+    };
+
+    let vipuser = new VipUser("rose","123456",3);
+
+    vipuser.showName();
+    vipuser.showPass();
+    vipuser.showLevel()
+
+
+
+
+</script>
