@@ -1,0 +1,143 @@
+webpack:
+1.什么是webpack?
+2.webpack有什么用?
+3.webpack和grunt/gulp有什么不同?
+4.使用webpack?
+    安装
+        npm install webpack -g  //安装webpack全局命令
+        npm install webpack-cli -g  //安装webpack-cli
+        npm init //初始化一个package.json文件
+        npm install webpack --save-dev //-D
+
+    使用:
+        4.1 webpack [entry] [output]
+        4.2 通过webpack.config.js来配置
+5.webpack.config.js文件的配置
+    const PATH = require("path");
+    module.exports = {
+        entry : "入口文件路径",
+        output : {
+            path : PATH.resolve(__dirname,"输出的文件路径"),
+            filename : "文件的名称"
+        }
+    }
+6.npm start
+    在package.json文件里面:
+        "script" : {
+            start : "webpack"
+        }
+    如果不是start,执行的话,npm run 自己定义的命令
+7.webpack搭建本地服务器
+    安装:
+        npm install webpack-dev-server -D
+    在webpack.config.js里面配置:
+        const PATH = require("path");
+        module.exports = {
+            entry : "入口文件路径",
+            output : {
+                path : PATH.resolve(__dirname,"输出的文件路径"),
+                filename : "文件的名称"
+            },
+            devServer : {
+                contentBase : "执行的目录路径",
+                port : "端口号",
+                inline : true,
+                historyApiFallback : true
+            }
+        }
+    在package.json文件里面进行配置:
+        "script" : {
+            "server" : "webpack-dev-server --open"
+        }
+    通过 npm run server 开启服务器
+
+8.开发调试:
+    在webpack.config.js文件里面:
+        const PATH = require("path");
+        module.exports = {
+            devtool : "eval-source-map"
+            entry : "入口文件路径",
+            output : {
+                path : PATH.resolve(__dirname,"输出的文件路径"),
+                filename : "文件的名称"
+            },
+            devServer : {
+                contentBase : "执行的目录路径",
+                port : "端口号",
+                inline : true,
+                historyApiFallback : true
+            }
+        }
+
+8.babel
+    安装:
+        npm install babel-core babel-loader babel-preset-env -D
+    v1:
+    在webpack.config.js文件里面:
+            const PATH = require("path");
+            module.exports = {
+                devtool : "eval-source-map"
+                entry : "入口文件路径",
+                output : {
+                    path : PATH.resolve(__dirname,"输出的文件路径"),
+                    filename : "文件的名称"
+                },
+                devServer : {
+                    contentBase : "执行的目录路径",
+                    port : "端口号",
+                    inline : true,
+                    historyApiFallback : true
+                },
+                module:{
+                    rules : [
+                        {
+                            test : /\.js$/,
+                            loader : "babel-loader",
+                            option : {
+                                presets : [
+                                    "env"
+                                ]
+                            },
+                            exclude:/node_modules/
+                        }
+                    ]
+                }
+            }
+
+        v2:
+
+        const PATH = require("path");
+        module.exports = {
+            devtool : "eval-source-map"
+            entry : "入口文件路径",
+            output : {
+                path : PATH.resolve(__dirname,"输出的文件路径"),
+                filename : "文件的名称"
+            },
+            devServer : {
+                contentBase : "执行的目录路径",
+                port : "端口号",
+                inline : true,
+                historyApiFallback : true
+            },
+            module:{
+                rules : [
+                    {
+                        test : /\.js$/,
+                        loader : "babel-loader",
+                        exclude:/node_modules/
+                    }
+                ]
+            }
+        }
+
+        在创建.babelrc文件,进行配置:
+            {
+                presets : ["env"]
+            }
+
+
+项目:
+    src 本地的源文件目录
+
+    public 编译之后的文件目录
