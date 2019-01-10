@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            width:120px;
+            height:30px;
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="con" >
+    <input type="button" id="get" value="post">
+    <div>
+        <label for="">验证码:</label><input id="va" value="" type="text">
+    </div>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+
+    $(function(){
+        $("#get").click(function(){
+            var a = $("#con").val();
+            $.post("https://api.apishop.net/common/verify/getSimpleVerifyImage",{
+                apiKey : "PxPlhAH1fedfa9cb4057fbfb2bc891f76796c58f6ccb4e1",
+                codeType: a
+            },function(response){
+                var data = JSON.parse(response);
+                console.log(data.result);
+                var yzm = $("<img>")
+                yzm.attr("src",data.result.fileName)
+                $("div").append(yzm)
+
+            })
+        })
+    })
+
+</script>

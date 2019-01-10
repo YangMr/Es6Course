@@ -1,0 +1,5 @@
+$.get():
+    url : 请求的地址
+    data :  传递的数据
+    callBack : 回调函数
+    type : 设置请求的数据类型    xml  json txt 

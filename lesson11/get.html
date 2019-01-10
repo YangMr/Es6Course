@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="con" >
+    <input type="button" id="get" value="get">
+    <ul>
+
+    </ul>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+
+    $(function(){
+        $("#get").click(function(){
+            var a = $("#con").val();
+            $.get("https://api.apishop.net/common/oil/getOilPriceToday",{
+                apiKey : "PxPlhAH1fedfa9cb4057fbfb2bc891f76796c58f6ccb4e1",
+                province : a
+            },function(response){
+                var data = JSON.parse(response);
+                console.log(data.result.list[0])
+                $.each(data.result.list[0],function(index,value){
+                    console.log(value)
+                    var li = $("<li><span>"+ value +"</li>");
+                    $("ul").append(li)
+                })
+            })
+        })
+    })
+
+</script>

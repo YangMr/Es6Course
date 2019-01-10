@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            width:800px;
+            border-spacing:0;
+            border-collapse:collapse;
+            margin:50px auto;
+        }
+        table tr{
+            height:35px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="content" placeholder="请输入卡牌名称">
+    <input type="button" value="ajax" id="btn">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>中文名称</th>
+                <th>英文名称</th>
+                <th>职业</th>
+                <th>稀有</th>
+                <th>生命值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+            </tr>
+        </tbody>
+
+
+    </table>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+
+    $(function(){
+        $("#btn").click(function(){
+            var cValue = $("#content").val();
+            $.ajax({
+                url : "https://api.apishop.net/common/hearthStone/queryCardListByKeyword",
+                data : {
+                    apiKey : "PxPlhAH1fedfa9cb4057fbfb2bc891f76796c58f6ccb4e1",
+                    keyword : cValue
+                },
+                dataType : "json",
+                type : "GET",
+                success : function(responseText){
+                    $.each(responseText.result.cardList[0],function(key,value){
+                        var td = $("<tr><td>"+ value +"</td></tr>");
+                        $("table tbody").append(td)
+                    });
+                },
+                error : function(error){
+                    console.log(error)
+                },
+                async : true
+            })
+        });
+
+    })
+
+
+</script>
