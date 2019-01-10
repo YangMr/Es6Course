@@ -1,9 +1,10 @@
-
 const PATH = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const  MiniCssExtractPlugin  =  require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
+    mode : "development",
     devtool : "eval-source-map",
     entry : "./src/js/index.js",
     output : {
@@ -16,6 +17,11 @@ module.exports = {
         port : 8000,
         historyApiFallback : true
     },
+    watchOptions: {
+       aggregateTimeout: 300,
+       poll: 1000,
+       ignored: /node_modules/
+   },
     module : {
         rules : [
             {
@@ -25,18 +31,17 @@ module.exports = {
             },
             {
                 test : /\.css$/,
-                use:ExtractTextPlugin.extract({
-
-                    fallback:"style-loader",
-                    use:[{
-                        loader:'css-loader',
-                        options:{
-                          minimize:true
-                          //css压缩
-                        }
-                    }],
-                    publicPath:"../"
-                })
+                use: [
+                  {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                      // you can specify a publicPath here
+                      // by default it use publicPath in webpackOptions.output
+                      publicPath: '../'
+                    }
+                  },
+                  "css-loader"
+              ]
             },
             {
                 test : /\.(png|jpeg|jpg|gif|svg)$/,
@@ -55,8 +60,21 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        minimizer: [
+          new UglifyJsPlugin({
+            cache: true,
+            parallel: true,
+            sourceMap: true // set to true if you want JS source maps
+          }),
+          new OptimizeCSSAssetsPlugin({})
+        ]
+    },
     plugins : [
-        new ExtractTextPlugin('./css/[name].css'),
+        new MiniCssExtractPlugin({
+          filename: "css/[name].css",
+          chunkFilename: "[id].css"
+        }),
         new HtmlWebpackPlugin({
             title : "webpack",
             template : "./src/index.html",
