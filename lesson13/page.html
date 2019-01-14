@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            width:1000px;
+            border:1px solid #ccc;
+            margin:50px auto;
+            padding:20px;
+            text-align:center;
+        }
+        div a{
+            padding:13px;
+            border:1px solid purple;
+            text-decoration: none;
+            margin-right:3px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <a href="javascript:;">1</a><a href="javascript:;">2</a><a href="javascript:;">3</a><a href="javascript:;">4</a><a
+            href="javascript:;">5</a><a href="javascript:;">6</a><a href="javascript:;">7</a><a
+            href="javascript:;">8</a><a href="javascript:;">9</a><a href="javascript:;">10</a><a
+            href="javascript:;">11</a><a href="javascript:;">12</a><a href="javascript:;">13</a><a href="javascript:;">14</a><a
+            href="javascript:;">15</a><a href="javascript:;">16</a><a href="javascript:;">17</a><a href="javascript:;">18</a><a
+            href="javascript:;">19</a><a href="javascript:;">20</a>
+    </div>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    
+    $(function () {
+        $("div a").click(function () {
+            _this = $(this);
+           $.ajax({
+               type : "GET",
+               url : "http://localhost/Es6Course/lesson13/page.php",
+               data : {
+                   page_num : _this.index(),
+                   size : 2
+               },
+               success : function (response) {
+                   console.log(response)
+               },
+               error : function (error) {
+                   throw error;
+               }
+           })
+        });
+    })
+    
+</script>
